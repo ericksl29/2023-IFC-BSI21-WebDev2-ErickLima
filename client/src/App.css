@@ -1,0 +1,155 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: white;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("img/background.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 3rem; /* Aumentei o tamanho da fonte para dar mais destaque */
+    color: rgb(255, 255, 255);
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px; /* Espaçamento entre as letras para um toque mais elegante */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra sutil para destacar o texto */
+}
+
+.pending,
+.synced,
+.error {
+    margin-bottom: 15px;
+}
+
+.pending::before,
+.synced::before,
+.error::before {
+    font-family: "FontAwesome";
+    font-size: 2rem;
+}
+
+.pending::before {
+    content: "\f110";
+    animation: spin 2s linear infinite;
+}
+
+.synced::before {
+    content: "\f058";
+    color: #2ecc71;
+}
+
+.error::before {
+    content: "\f057";
+    color: #e74c3c;
+}
+
+.input-action {
+    width: 100%;
+}
+
+.input-action::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+ul {
+    width: 100%;
+    padding: 0;
+}
+
+li {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    background: #2d2d2d; /* Cor de fundo mais escura */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px; /* Borda mais suave */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra mais sutil */
+}
+
+.input-action,
+.input-tag,
+li>* {
+    font-size: 1.2rem;
+    padding: 1rem;
+    background: #383838; /* Cor de fundo mais escura */
+    border-radius: 8px; /* Borda mais suave */
+    border: 1px solid #555; /* Borda mais escura */
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    display: inline-block; /* Adicionado para tornar os elementos inline */
+}
+.input-action{
+    width: 75%;
+}
+
+.input-tag{
+    width: 25%;
+    text-align: center;
+}
+
+li>span {
+    min-width: 80px;
+    text-align: center;
+}
+
+li > input + span{
+    border: none;
+}
+
+li>span::before {
+    content: "\f02c";
+    font-family: "FontAwesome";
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+li button {
+    cursor: pointer;
+    color: white;
+    background: #383838; /* Cor de fundo mais escura */
+    border: none;
+    border-radius: 8px; /* Borda mais suave */
+    padding: 1rem;
+    transition: background 0.3s ease-in-out;
+}
+
+li button:hover {
+    background: #555; /* Cor de fundo mais escura */
+}
+
+li input {
+    flex-grow: 1;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px; /* Borda mais suave */
+    background: #383838; /* Cor de fundo mais escura */
+    color: #fff; /* Texto mais claro */
+}
+
